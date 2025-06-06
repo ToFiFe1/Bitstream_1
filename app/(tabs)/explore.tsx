@@ -1,17 +1,21 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+// Update the import path below if your Searchbar component is in a different location
+import  Searchbar  from '@/components/Seachbar';
+
 
 const ExploreScreen: React.FC = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Explore</Text>
+       
             <View style={styles.container2}>
                 <StatusBar hidden={true} />
+                <Searchbar></Searchbar>
             
             {/* Add your explore content here */}
             </View>
-            {/* Add your explore content here */}
+           
         </View>
     );
 };
@@ -29,10 +33,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: "transparent",
         borderRadius: 47,
-        borderColor: '#ffffff',
-        borderWidth: 1,
+        borderColor: 'gray',
+        borderWidth: 2,
         padding: 20,
-        marginTop: -30,
+        marginTop: 2,
+     
         width: '98%',
     },
     title: {

@@ -1,39 +1,39 @@
 import React from 'react';
-import { Platform } from 'react-native';
-import { View, Text } from 'react-native';
+import { SafeAreaView, View, Text, Platform, StyleSheet } from 'react-native';
 
-function header() {
-    return (
-        <View
-            style={{
-            alignSelf: 'stretch',
-            borderRadius: 20,
-            padding: 13,
-            
-            width: '100%',
-            backgroundColor: '#222',
-            alignItems: 'center',
-            ...(Platform.OS === 'ios'
-                ? {
-                top: -20,
-                paddingVertical: 10,
-                flexDirection: 'row',
-                borderTopLeftRadius: 40,
-            
-                borderTopRightRadius: 100,
-                borderBottomLeftRadius: 0,
-                borderBottomRightRadius: 0,
-                alignSelf: 'flex-start',
-                left: -20,
-                alignItems: 'flex-start',
-                borderRadius: undefined,
-                }
-                : {})
-            }}
-        >
-            <Text style={{ margin: 0, color: '#fff', left:"-40%",fontSize: Platform.OS === 'ios' ? 16 : 20 }}>Bitstream</Text>
+const Header = () => (
+    <SafeAreaView style={styles.safeArea}>
+        <View style={styles.container}>
+           <Text style={styles.text}>Bitstream</Text>
         </View>
-    );
-}
+    </SafeAreaView>
+);
 
-export default header;
+const styles = StyleSheet.create({
+    safeArea: {
+        
+    },
+    text:{
+        color: '#fff',
+        fontSize: 20,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontFamily: 'Roboto_Condensed-Black',        
+        marginBottom: Platform.OS === 'ios' ? 0 : 0, // Adjust for iOS notch
+    },
+    container: {
+        width: '100%',
+        backgroundColor: '#222',
+        borderTopLeftRadius: Platform.OS === 'web' ? 8 : 50,
+        borderTopRightRadius: Platform.OS === 'web' ? 8 : 50,
+        top: Platform.OS === 'web' ? -20 : 0,
+        paddingVertical: 40,
+        justifyContent: 'center',
+    },
+    title: {
+        color: '#fff',
+        fontSize: 20,
+    },
+});
+
+export default Header;

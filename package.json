@@ -27,8 +27,10 @@
     "expo-status-bar": "~2.2.3",
     "expo-symbols": "~0.4.4",
     "expo-system-ui": "~5.0.7",
+    "expo-updates": "~0.28.13",
     "expo-web-browser": "~14.1.6",
     "git": "^0.1.5",
+    "google-fonts-webpack-plugin": "^0.4.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.2",
@@ -38,7 +40,7 @@
     "react-native-screens": "~4.10.0",
     "react-native-web": "~0.20.0",
     "react-native-webview": "13.13.5",
-    "expo-updates": "~0.28.13"
+    "webpack": "^5.99.9"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

@@ -27,20 +27,20 @@ const ExploreScreen: React.FC = () => {
 
 const styles = StyleSheet.create({
     container:{
-        flex: 1,
+        flex: 2,
         alignItems: 'center',
         
         backgroundColor: '#0a0a0a',
     },
     container2: {
         flex: 1,
-       
+       zIndex: 1    ,
         backgroundColor: "transparent",
         borderRadius: Platform.OS === 'web' ? 8 : 47,
         borderColor: '#00aaff',
         borderWidth: 1,
-        padding: 20,
-        marginTop: 1,
+       
+        marginTop: 10,
    
         width: '99%',
     },

@@ -1,39 +1,69 @@
-import React from 'react';
-import { SafeAreaView, View, Text, Platform, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import {
+    Platform,
+    SafeAreaView,
+    StyleSheet,
+    TextInput,
+    View,
+} from 'react-native';
 
-const Header = () => (
+const Header = () => {
+  const [searchText, setSearchText] = useState('');
+
+  const handleSearch = (text: string) => {
+    setSearchText(text);
+    console.log('Suchtext:', text); // Hier kannst du später eine Filterfunktion einsetzen
+  };
+
+  return (
     <SafeAreaView style={styles.safeArea}>
-        <View style={styles.container}>
-           <Text style={styles.text}>Bitstream</Text>
-        </View>
+      <View style={styles.container}>
+        <TextInput
+          style={styles.searchbar}
+          placeholder="Suche..."
+          placeholderTextColor="#888"
+          value={searchText}
+          onChangeText={handleSearch}
+        />
+        <View style={styles.menu}></View>
+      </View>
     </SafeAreaView>
-);
+  );
+};
 
 const styles = StyleSheet.create({
-    safeArea: {
-        
-    },
-    text:{
-        color: '#fff',
-        fontSize: 20,
-        textAlign: 'center',
-        fontWeight: 'bold',
-        fontFamily: 'Roboto_Condensed-Black',        
-        marginBottom: Platform.OS === 'ios' ? 0 : 0, // Adjust for iOS notch
-    },
-    container: {
-        width: '100%',
-        backgroundColor: '#222',
-        borderTopLeftRadius: Platform.OS === 'web' ? 8 : 50,
-        borderTopRightRadius: Platform.OS === 'web' ? 8 : 50,
-        top: Platform.OS === 'web' ? -20 : 0,
-        paddingVertical: 40,
-        justifyContent: 'center',
-    },
-    title: {
-        color: '#fff',
-        fontSize: 20,
-    },
+  safeArea: {
+   
+  },
+  container: {
+    alignSelf: 'center',
+    width: '90%',
+    backgroundColor: '#222',
+    borderRadius: 40,
+    marginTop: Platform.OS === 'web' ? 200 : 20,
+    height: 60,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 15,
+    flexDirection: 'row',
+    shadowOffset: { width: 0, height: 0.5 },
+    shadowColor: '#fff',
+    shadowOpacity: 0.5,
+  },
+  searchbar: {
+    flex: 1,
+    height: 40,
+    backgroundColor: '#fffff6',
+    borderRadius: 20,
+    paddingHorizontal: 15,
+    marginRight: 10,
+  },
+  menu: {
+    width: 40,
+    height: 40,
+    backgroundColor: '#555',
+    borderRadius: 20,
+  },
 });
 
 export default Header;

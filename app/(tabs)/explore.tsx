@@ -29,18 +29,19 @@ const styles = StyleSheet.create({
     container:{
         flex: 2,
         alignItems: 'center',
-        
-        backgroundColor: '#0a0a0a',
+        color: '#00ff00',
+       
+        backgroundColor: '#0f0f0f',
     },
     container2: {
-        flex: 1,
-       zIndex: 1    ,
+        flex: 2,
+       zIndex: 0    ,
         backgroundColor: "transparent",
         borderRadius: Platform.OS === 'web' ? 8 : 47,
         borderColor: '#00aaff',
         borderWidth: 1,
        
-        marginTop: 10,
+        marginTop:10,
    
         width: '99%',
     },
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
         fontSize: 28,
         fontWeight: 'bold',
         color: '#ffffff',
+      
         zIndex: 1,
     },
 });

@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#ffffff',
       
-        zIndex: 1,
+        zIndex: 2,
     },
 });
 

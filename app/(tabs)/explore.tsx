@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 // Update the import path below if your Searchbar component is in a different location
  
-import  H  from '@/components/Header';
+import H from '@/components/Header';
 import { Platform } from 'react-native';
 
 
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#ffffff',
       
-        zIndex: 2,
+        zIndex: 1,
     },
 });
 

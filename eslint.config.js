@@ -6,5 +6,7 @@ module.exports = defineConfig([
   expoConfig,
   {
     ignores: ['dist/*'],
+    // Add other config options here
+    base: "/Bitstream_1",
   },
 ]);
